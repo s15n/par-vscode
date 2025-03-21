@@ -1,0 +1,96 @@
+{
+  "name": "par-vscode",
+  "displayName": "par-vscode",
+  "description": "Support for the Par language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "par",
+        "aliases": [
+          "Par",
+          "par"
+        ],
+        "extensions": [
+          ".par"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "par",
+        "scopeName": "source.par",
+        "path": "./syntaxes/par.tmLanguage.json"
+      },
+      {
+        "scopeName": "markdown.par.codeblock",
+        "path": "./syntaxes/par.codeblock.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.par": "par"
+        }
+      }
+    ],
+    "configurationDefaults": {
+      "[par]": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true
+      }
+    },
+    "snippets": [
+      {
+        "language": "par",
+        "path": "./snippets.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "par.restartServer",
+        "title": "Restart Par Server",
+        "category": "Par"
+      }
+    ],
+    "configuration": {
+      "title": "Par",
+      "properties": {
+        "par.path": {
+          "type": "string",
+          "default": null,
+          "description": "A path to the Par executable. By default, the extension looks for par in the PATH, but if set, will use the path specified instead.",
+          "scope": "machine"
+        }
+      }
+    }
+  },
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -b",
+    "watch": "tsc -b -w"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.13.11",
+    "@types/vscode": "^1.98.0",
+    "@vscode/vsce": "^3.3.0",
+    "glob": "^11.0.1",
+    "mocha": "^11.1.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.2",
+    "vscode-test": "^1.6.1"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  }
+}

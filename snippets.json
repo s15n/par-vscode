@@ -1,0 +1,91 @@
+{
+    "Typed Definition": {
+        "prefix": ["def"],
+        "body": [
+            "def ${1:name}: ${2} = ${0:todo}"
+        ]
+    },
+    "Untyped Definition": {
+        "prefix": ["def"],
+        "body": [
+            "def ${1:name} = ${0:todo}"
+        ]
+    },
+    "Definition with Declaration": {
+        "prefix": ["dec"],
+        "body": [
+            "dec ${1:name} : ${2}",
+            "def ${1:name} = ${0:todo}"
+        ]
+    },
+    "Declaration": {
+        "prefix": ["dec"],
+        "body": [
+            "dec ${1:name} : ${2}"
+        ]
+    },
+    "Let Expression": {
+        "prefix": ["let"],
+        "body": [
+            "let ${1} = ${2} in ${0}"
+        ]
+    },
+    "Let Statement": {
+        "prefix": ["let"],
+        "body": [
+            "let ${1} = ${0}"
+        ]
+    },
+    "Do Expression": {
+        "prefix": ["do"],
+        "body": [
+            "do {${1}} in ${0}"
+        ]
+    },
+    "Match Expression": {
+        "prefix": ["match"],
+        "body": [
+            "${1} {",
+            "\t${2} => ${0}",
+            "}"
+        ]
+    },
+    "Match Statement": {
+        "prefix": ["match"],
+        "body": [
+            "${1} {",
+            "\t${2} => {${0}}",
+            "}"
+        ]
+    },
+    "Type Definition": {
+        "prefix": ["type"],
+        "body": [
+            "type ${1:name} = ${0:!}"
+        ]
+    },
+    "Either Type Definition": {
+        "prefix": ["either"],
+        "body": [
+            "type ${1:name} = either {",
+            "\t.${2}",
+            "}"
+        ]
+    },
+    "Recursive Either Type Definition": {
+        "prefix": ["recursive"],
+        "body": [
+            "type ${1:name} = recursive either {",
+            "\t.${2}",
+            "}"
+        ]
+    },
+    "Chan Expression": {
+        "prefix": ["chan"],
+        "body": [
+            "chan ${1:return} {",
+            "\t${0:todo}",
+            "}"
+        ]
+    }
+}

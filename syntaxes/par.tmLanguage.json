@@ -1,0 +1,99 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Par",
+	"patterns": [
+		{
+			"include": "#line-comments"
+		},
+		{
+			"include": "#block-comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#labels"
+		},
+		{
+			"include": "#identifiers"
+		}
+	],
+	"repository": {
+		"line-comments": {
+			"name": "comment.line.double-slash.par",
+			"match": "//.*"
+		},
+		"block-comments": {
+			"name": "comment.block.par",
+			"begin": "/\\*",
+			"end": "\\*/",
+			"patterns": [{
+				"include": "#block-comments"
+			}]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.par",
+					"match": "\\b(begin|chan|dec|def|derive|do|either|for|impl|in|iterative|let|loop|recursive|self|todo|trait|type|unfounded)\\b"
+				},
+				{
+					"name": "keyword.operator.link.par",
+					"match": "<>"
+				},
+				{
+					"name": "keyword.operator.arrow.par",
+					"match": "=>"
+				},
+				{
+					"name": "keyword.operator.assign.par",
+					"match": "="
+				},
+				{
+					"name": "keyword.operator.annotate.par",
+					"match": ":(?=\\s)"
+				},
+				{
+					"name": "keyword.other.type.par",
+					"match": "!|\\?"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.par",
+			"begin": "\"",
+			"end": "\""
+		},
+		"numbers": {
+			"name": "constant.numeric.par",
+			"match": "-?\\b[0-9]+\\b"
+		},
+		"labels": {
+			"patterns": [
+				{
+					"name": "entity.name.tag.label.par",
+					"match": "\\.[[:alpha:]][[:word:]]*\\b"
+				},
+				{
+					"name": "entity.name.tag.loop-label.par",
+					"match": "\\:[[:alpha:]][[:word:]]*\\b"
+				},
+				{
+					"name": "entity.name.tag.type.par",
+					"match": "#[[:alpha:]][[:word:]]*\\b"
+				}
+			]
+		},
+		"identifiers": {
+			"name": "variable.other.par",
+			"match": "\\b[[:alpha:]][[:word:]]\\b"
+		}
+	},
+	"scopeName": "source.par"
+}
