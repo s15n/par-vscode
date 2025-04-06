@@ -7,8 +7,14 @@
     "vscode": "^1.98.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Snippets"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/s15n/par-vscode.git"
+  },
+  "icon": "assets/parrot.png",
   "contributes": {
     "languages": [
       {
@@ -20,7 +26,11 @@
         "extensions": [
           ".par"
         ],
-        "configuration": "./language-configuration.json"
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "assets/par-icon.png",
+          "dark": "assets/par-icon.png"
+        }
       }
     ],
     "grammars": [

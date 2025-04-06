@@ -95,6 +95,10 @@
 				{
 					"name": "entity.name.type.par",
 					"match": "\\b[[:upper:]][[:word:]]*\\b"
+				},
+				{
+					"name": "entity.name.par",
+					"match": "\\b[[:word:]]+\\b"
 				}
 			]
 		}
