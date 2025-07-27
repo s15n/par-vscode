@@ -1,4 +1,5 @@
 Test:
+- `npm run watch`
 - Press F5
 - The extension works for all `.par` files
 - To reload, press Ctrl+R/Cmd+R
