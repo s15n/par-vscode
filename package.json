@@ -77,6 +77,17 @@
           "default": null,
           "description": "A path to the Par executable. By default, the extension looks for par in the PATH, but if set, will use the path specified instead.",
           "scope": "machine"
+        },
+        "par.trace.server": {
+          "type": "string",
+          "scope": "window",
+          "enum": [
+            "off",
+            "messages",
+            "verbose"
+          ],
+          "default": "off",
+          "description": "Trace requests to the Par LSP server."
         }
       }
     }
