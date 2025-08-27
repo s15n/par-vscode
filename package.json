@@ -85,8 +85,8 @@
   "main": "./out/extension.js",
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "compile": "tsc -b",
-    "watch": "tsc -b -w"
+    "compile": "tsc -b && scripts/process-yaml.mjs",
+    "watch": "concurrently -n 'tsc,yaml' 'tsc -b -w' 'scripts/process-yaml.mjs -w'"
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",
@@ -94,7 +94,9 @@
     "@types/node": "^22.13.11",
     "@types/vscode": "^1.98.0",
     "@vscode/vsce": "^3.3.0",
+    "concurrently": "^9.2.0",
     "glob": "^11.0.1",
+    "js-yaml": "^4.1.0",
     "mocha": "^11.1.0",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.2",
