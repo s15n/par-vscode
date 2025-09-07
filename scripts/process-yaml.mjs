@@ -3,10 +3,11 @@
 import * as yaml from "js-yaml";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const rewrite = async (fname) => {
     const doc = yaml.load(await fs.readFile(fname, "utf8"));
-    fs.writeFile(fname.replace("yaml", "json"), JSON.stringify(doc));
+    await fs.writeFile(fname.replace("yaml", "json"), JSON.stringify(doc));
 };
 
 const watcher = async (fname) => {
@@ -16,8 +17,11 @@ const watcher = async (fname) => {
     }
 };
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const files = [
-    path.resolve(import.meta.dirname, "../syntaxes/par.tmLanguage.yaml"),
+    path.resolve(__dirname, "../syntaxes/par.tmLanguage.yaml"),
 ];
 
 const args = process.argv.slice(2);
