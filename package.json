@@ -86,8 +86,11 @@
   "main": "./out/extension.js",
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "compile": "tsc -b && scripts/process-yaml.mjs",
-    "watch": "concurrently -n 'tsc,yaml' 'tsc -b -w' 'scripts/process-yaml.mjs -w'"
+    "compile": "tsc -b --noEmit && esbuild src/extension.ts --bundle --platform=node --external:vscode --outfile=out/extension.js --format=cjs --sourcemap && scripts/process-yaml.mjs",
+    "watch": "concurrently -n 'type,esb,yaml' 'tsc -b -w --noEmit' \"esbuild src/extension.ts --bundle --platform=node --external:vscode --outfile=out/extension.js --format=cjs --sourcemap --watch\" 'scripts/process-yaml.mjs -w'",
+    "vsce:verify": "vsce ls --no-yarn",
+    "vsce:package": "vsce pack --no-yarn",
+    "vsce:publish": "vsce publish --no-yarn"
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",
@@ -96,14 +99,14 @@
     "@types/vscode": "^1.98.0",
     "@vscode/vsce": "^3.3.0",
     "concurrently": "^9.2.0",
+    "esbuild": "^0.23.0",
     "glob": "^11.0.1",
     "js-yaml": "^4.1.0",
     "mocha": "^11.1.0",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.2",
-    "vscode-test": "^1.6.1"
-  },
-  "dependencies": {
+    "vscode-test": "^1.6.1",
     "vscode-languageclient": "^9.0.1"
-  }
+  },
+  "dependencies": {}
 }

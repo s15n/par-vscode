@@ -1,3 +1,20 @@
 .vscode/**
 .vscode-test/**
 .gitignore
+
+# Exclude sources and build-only files
+src/**
+scripts/**
+tsconfig.json
+tsconfig.tsbuildinfo
+
+# Exclude unneeded grammars sources (we ship compiled JSON)
+syntaxes/*.yaml
+
+# Maps and tests
+**/*.map
+**/*.test.*
+**/__tests__/**
+
+# Node modules (not needed after bundling)
+node_modules/**
