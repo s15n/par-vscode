@@ -17,7 +17,7 @@ repository:
           1: { name: keyword.control }
           2: { name: entity.name.section }
       - name: keyword.control
-        match: \b(let|do|case|begin|unfounded|loop)\b
+        match: \b(let|do|case|begin|unfounded|loop|catch|throw|try)\b
       - match: \b(recursive|iterative)\s*/\s*([\w_][\w\d_]*)\b
         captures:
           1: { name: keyword }
