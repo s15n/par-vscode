@@ -97,6 +97,7 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.13.11",
     "@types/vscode": "^1.98.0",
+    "@types/which": "^3.0.4",
     "@vscode/vsce": "^3.3.0",
     "concurrently": "^9.2.0",
     "esbuild": "^0.23.0",
@@ -105,8 +106,8 @@
     "mocha": "^11.1.0",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.2",
+    "vscode-languageclient": "^9.0.1",
     "vscode-test": "^1.6.1",
-    "vscode-languageclient": "^9.0.1"
-  },
-  "dependencies": {}
+    "which": "^5.0.0"
+  }
 }
