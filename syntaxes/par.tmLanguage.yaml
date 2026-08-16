@@ -147,7 +147,7 @@ repository:
       - name: keyword.control
         match: \b(do|case|in|chan|begin|loop|unfounded|catch|throw|try|todo|poll|repoll|submit|default|else|if|is|and|or|not)\b
       - name: keyword.other
-        match: \b(either|choice|recursive|iterative|self|box|dual|as|external)\b
+        match: \b(either|choice|recursive|iterative|self|box|dual|as|external|include)\b
       - name: keyword.operator
         match: '!'
   dot-keywords:

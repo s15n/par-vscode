@@ -2,7 +2,7 @@
   "name": "par-vscode",
   "displayName": "par-vscode",
   "description": "Support for the Par language",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "publisher": "par-lang",
   "engines": {
     "vscode": "^1.98.0"
