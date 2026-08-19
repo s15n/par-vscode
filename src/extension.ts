@@ -135,6 +135,7 @@ async function createLanguageClient(): Promise<LanguageClient | undefined> {
 
     const clientOptions: LanguageClientOptions = {
         documentSelector: [{ scheme: "file", language: "par" }],
+        traceOutputChannel: vscode.window.createOutputChannel("Par LSP Trace"),
     };
 
     const serverOptions: ServerOptions = {
@@ -143,7 +144,7 @@ async function createLanguageClient(): Promise<LanguageClient | undefined> {
     };
 
     return new LanguageClient(
-        "par_language_server",
+        "par",
         "Par Language Server",
         serverOptions,
         clientOptions,
